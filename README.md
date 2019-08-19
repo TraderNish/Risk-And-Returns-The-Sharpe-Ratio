@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 %matplotlib inline
 
--- Reading in the data
+-- Reading in the data. A goal here is to read in the data as a time series by moving the Date column to the index. You can load the data using pd.read_csv(). Make sure you use the parse_dates parameter to set the 'Date' column to datetime64, and the index_col parameter to set the same column as index.
 
 stock_data = pd.read_csv("datasets/stock_data.csv", parse_dates = ['Date'], index_col = 'Date')
 
@@ -21,7 +21,7 @@ benchmark_data = pd.read_csv("datasets/benchmark_data.csv", parse_dates = ['Date
 
 benchmark_data = benchmark_data.dropna()
 
-A goal here is to read in the data as a time series by moving the Date column to the index. You can load the data using pd.read_csv(). Make sure you use the parse_dates parameter to set the 'Date' column to datetime64, and the index_col parameter to set the same column as index.
+
 
 
 # 2. Take a peek at the data you loaded in the last task. 
@@ -30,7 +30,10 @@ A goal here is to read in the data as a time series by moving the Date column to
 
 
 -- Display summary for stock_data
+
 print('Stocks\n')
+
+
 -- Display a summary of each DataFrame's content using .info()
 
 stock_data.info()
@@ -43,7 +46,9 @@ print('\nBenchmarks\n')
 benchmark_data.info()
 
 -- Show the first few lines of each DataFrame using .head()
+
 stock_data.head()
+
 benchmark_data.head()
 
 # 3. Plot & summarize daily prices for Amazon and Facebook 
@@ -53,10 +58,12 @@ benchmark_data.head()
 -- visualize the stock_data - Use the pandas .plot() method on stock_data to show a line plot.
 
 stock_data.plot(subplots = True, title = 'Stock Data')
+
 plt.show()
 
 
 -- summarize the stock_data - Apply the .describe() method to the stock data to produce summary statistics.
+
 stock_data.describe()
 
 # 4. Visualize & summarize daily values for the S&P 500
