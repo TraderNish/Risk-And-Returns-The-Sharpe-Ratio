@@ -14,8 +14,11 @@ plt.style.use('fivethirtyeight')
 %matplotlib inline
 
 -- Reading in the data
+
 stock_data = pd.read_csv("datasets/stock_data.csv", parse_dates = ['Date'], index_col = 'Date')
+
 benchmark_data = pd.read_csv("datasets/benchmark_data.csv", parse_dates = ['Date'], index_col = 'Date')
+
 benchmark_data = benchmark_data.dropna()
 
 A goal here is to read in the data as a time series by moving the Date column to the index. You can load the data using pd.read_csv(). Make sure you use the parse_dates parameter to set the 'Date' column to datetime64, and the index_col parameter to set the same column as index.
