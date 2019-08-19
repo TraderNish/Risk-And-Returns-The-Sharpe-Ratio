@@ -1,5 +1,6 @@
 # Risk-And-Returns-The-Sharpe-Ratio
-#Use pandas to calculate and compare profitability and risk of different investments using the Sharpe Ratio
+
+-- Use pandas to calculate and compare profitability and risk of different investments using the Sharpe Ratio
 
 
 # 1. Read in the stock data for Facebook, Amazon and the S&P 500.
